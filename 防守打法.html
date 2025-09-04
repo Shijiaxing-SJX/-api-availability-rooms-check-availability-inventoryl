@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>比亚迪王朝 - 深圳湛宝促销活动</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Microsoft YaHei", sans-serif;
+        }
+        
+        body {
+            background-color: #f5f5f5;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        /* 头部样式 */
+        header {
+            background: linear-gradient(to right, #c00, #a00);
+            color: #fff;
+            padding: 15px 0;
+            border-radius: 8px 8px 0 0;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        
+        .logo-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+        
+        .logo {
+            font-size: 28px;
+            font-weight: bold;
+            color: #ffde59;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+        }
+        
+        .dealer-name {
+            font-size: 22px;
+            font-weight: bold;
+            color: #fff;
+        }
+        
+        /* 主横幅样式 */
+        .main-banner {
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect width="100" height="100" fill="%23d00" /><path d="M0,0 L100,100 M100,0 L0,100" stroke="%23ffde59" stroke-width="2" /><circle cx="20" cy="20" r="5" fill="%23ffde59" /><circle cx="80" cy="30" r="7" fill="%23ffde59" /><circle cx="40" cy="70" r="6" fill="%23ffde59" /><circle cx="70" cy="60" r="4" fill="%23ffde59" /></svg>') repeat;
+            background-color: #c00;
+            color: #fff;
+            text-align: center;
+            padding: 40px 20px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .main-banner::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at top right, rgba(255,222,89,0.2), transparent 70%);
+        }
+        
+        .slogan {
+            font-size: 36px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #ffde59;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+        
+        .sub-slogan {
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: #fff;
+        }
+        
+        .promo-text {
+            font-size: 18px;
+            max-width: 800px;
+            margin: 0 auto 30px;
+            background: rgba(0,0,0,0.3);
+            padding: 15px;
+            border-radius: 8px;
+            border: 1px solid #ffde59;
+        }
+        
+        /* 内容区域样式 */
+        .content {
+            background: #fff;
+            padding: 30px;
+            border-radius: 0 0 8px 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        
+        .contact-info {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin-bottom: 40px;
+            padding: 20px;
+            background: #f9f9f9;
+            border-radius: 8px;
+            border: 1px dashed #c00;
+        }
+        
+        .contact-item {
+            text-align: center;
+            margin: 10px;
+        }
+        
+        .contact-item h3 {
+            color: #c00;
+            margin-bottom: 10px;
+            font-size: 18px;
+        }
+        
+        .contact-item p {
+            font-size: 16px;
+            font-weight: bold;
+        }
+        
+        /* 按钮区域样式 */
+        .action-buttons {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        
+        .btn {
+            flex: 1;
+            min-width: 250px;
+            padding: 20px;
+            border: none;
+            border-radius: 8px;
+            font-size: 20px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .btn-signup {
+            background: linear-gradient(to bottom, #c00, #a00);
+            color: #ffde59;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+        
+        .btn-gift {
+            background: linear-gradient(to bottom, #ffde59, #e6c851);
+            color: #c00;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+        
+        .btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+        }
+        
+        .btn:active {
+            transform: translateY(0);
+        }
+        
+        .btn-icon {
+            font-size: 32px;
+            margin-bottom: 10px;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 20px;
+            color: #666;
+            font-size: 14px;
+        }
+        
+        /* 响应式设计 */
+        @media (max-width: 768px) {
+            .slogan {
+                font-size: 28px;
+            }
+            
+            .sub-slogan {
+                font-size: 20px;
+            }
+            
+            .btn {
+                min-width: 100%;
+            }
+            
+            .action-buttons {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo-container">
+                <div class="logo">BYD 王朝</div>
+                <div class="dealer-name">深圳湛宝</div>
+            </div>
+        </header>
+        
+        <div class="main-banner">
+            <h1 class="slogan">焕新启程 "价"驭未来</h1>
+            <h2 class="sub-slogan">王朝比亚迪华南首家6S店升级狂欢GO深圳湛宝</h2>
+            <p class="promo-text">限时优惠，尊享礼遇！现在参与活动，即可享受多重好礼和超值购车优惠</p>
+        </div>
+        
+        <div class="content">
+            <div class="contact-info">
+                <div class="contact-item">
+                    <h3>咨询电话</h3>
+                    <p>0755-89738666</p>
+                </div>
+                <div class="contact-item">
+                    <h3>门店地址</h3>
+                    <p>深圳市龙岗区信义汽车城8号</p>
+                </div>
+            </div>
+            
+            <div class="action-buttons">
+                <button class="btn btn-signup">
+                    <span class="btn-icon">📝</span>
+                    <span>立即报名参与活动</span>
+                </button>
+                <button class="btn btn-gift">
+                    <span class="btn-icon">🎁</span>
+                    <span>福利礼包一</span>
+                </button>
+                <button class="btn btn-gift">
+                    <span class="btn-icon">🎁</span>
+                    <span>福利礼包二</span>
+                </button>
+            </div>
+        </div>
+        
+        <footer>
+            <p>© 2023 比亚迪王朝 深圳湛宝店 版权所有</p>
+        </footer>
+    </div>
+
+    <script>
+        // 为按钮添加点击事件
+        document.querySelector('.btn-signup').addEventListener('click', function() {
+            alert('感谢您的参与！请填写报名信息，我们的顾问将尽快联系您。');
+        });
+        
+        document.querySelectorAll('.btn-gift').forEach(function(btn, index) {
+            btn.addEventListener('click', function() {
+                alert('您已成功领取福利礼包 ' + (index + 1) + '！详情请咨询我们的销售顾问。');
+            });
+        });
+    </script>
+</body>
+</html>
